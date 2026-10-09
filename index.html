@@ -154,39 +154,433 @@ border:0;border-radius:8px;font-size:17px;font-weight:bold;margin-top:12px;">
 </form>
 </section>
 
-<script>
-<section class="enquiry-section">
-  <div class="enquiry-box">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <h2>🎓 Admission Enquiry Form</h2>
-    <p>Fill in your details. Our admission team will contact you.</p>
+<title>College Info | Admission Enquiry</title>
+
+<meta name="description" content="Explore colleges and get admission guidance for Medical, Engineering, Law and Management courses.">
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f6fb;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+header {
+  background: #102b50;
+  color: white;
+  padding: 18px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #22c5a6;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+.hero {
+  background: linear-gradient(135deg, #102b50, #176b87);
+  color: white;
+  text-align: center;
+  padding: 55px 18px;
+}
+
+.hero h1 {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: auto;
+  color: #e2e8f0;
+}
+
+.hero-buttons {
+  margin-top: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 5px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-green {
+  background: #20b86a;
+  color: white;
+}
+
+.btn-white {
+  background: white;
+  color: #102b50;
+}
+
+.courses {
+  padding: 35px 15px;
+  text-align: center;
+}
+
+.courses h2 {
+  color: #102b50;
+  margin-bottom: 20px;
+}
+
+.course-grid {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+  gap: 12px;
+}
+
+.course-card {
+  background: white;
+  padding: 20px 10px;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px #0000000d;
+  font-weight: bold;
+  color: #164e63;
+}
+
+.form-section {
+  padding: 35px 15px 50px;
+}
+
+.form-box {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 28px;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px #00000012;
+}
+
+.form-box h2 {
+  text-align: center;
+  color: #102b50;
+  margin-bottom: 8px;
+}
+
+.form-intro {
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+label {
+  display: block;
+  margin: 14px 0 6px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+input, select, textarea {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  font-size: 15px;
+  background: white;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid #22a997;
+  border-color: #22a997;
+}
+
+.submit-btn, .call-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 17px;
+}
+
+.submit-btn {
+  background: #128c7e;
+  color: white;
+}
+
+.call-btn {
+  background: #102b50;
+  color: white;
+}
+
+.submit-btn:hover {
+  background: #0d766b;
+}
+
+footer {
+  background: #102b50;
+  color: white;
+  text-align: center;
+  padding: 22px 15px;
+  font-size: 14px;
+}
+
+footer a {
+  color: #72e3c7;
+  text-decoration: none;
+}
+
+.small-note {
+  text-align: center;
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 15px;
+}
+
+@media (max-width: 500px) {
+  .hero h1 {
+    font-size: 27px;
+  }
+
+  .form-box {
+    padding: 20px;
+  }
+
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">College <span>Info</span></div>
+  <nav>
+    <a href="#courses">Courses</a>
+    <a href="#enquiry">Admission Enquiry</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Find Your Dream College</h1>
+  <p>
+    Explore college options and get admission guidance for
+    Medical, Engineering, Law, Management and other courses.
+  </p>
+
+  <div class="hero-buttons">
+    <a href="#enquiry" class="btn btn-white">
+      Apply for Admission
+    </a>
+
+    <a href="https://wa.me/919354748118"
+       class="btn btn-green" target="_blank" rel="noopener">
+      WhatsApp Us
+    </a>
+  </div>
+</section>
+
+<section class="courses" id="courses">
+  <h2>Explore Courses</h2>
+
+  <div class="course-grid">
+    <div class="course-card">🩺 MBBS</div>
+    <div class="course-card">🦷 BDS</div>
+    <div class="course-card">🌿 BAMS</div>
+    <div class="course-card">⚙️ Engineering</div>
+    <div class="course-card">⚖️ Law</div>
+    <div class="course-card">📊 Management</div>
+    <div class="course-card">💻 BCA</div>
+    <div class="course-card">🎓 MCA</div>
+  </div>
+</section>
+
+<section class="form-section" id="enquiry">
+  <div class="form-box">
+
+    <h2>Admission Enquiry Form</h2>
+
+    <p class="form-intro">
+      Fill in your details. Our admission team will assist you.
+    </p>
 
     <form id="enquiryForm">
 
-      <label>Student Name *</label>
-      <input type="text" id="studentName"
-        placeholder="Enter your full name" required>
+      <label for="studentName">Student Name *</label>
+      <input
+        type="text"
+        id="studentName"
+        placeholder="Enter your full name"
+        required>
 
-      <label>Mobile Number *</label>
-      <input type="tel" id="mobile"
-        placeholder="Enter 10-digit mobile number"
-        pattern="[0-9]{10}" maxlength="10" required>
+      <label for="mobile">Mobile Number *</label>
+      <input
+        type="tel"
+        id="mobile"
+        placeholder="10-digit mobile number"
+        inputmode="numeric"
+        pattern="[0-9]{10}"
+        maxlength="10"
+        required>
 
-      <label>Select Course *</label>
+      <label for="course">Select Course *</label>
       <select id="course" required>
-        <option value="">-- Select Course --</option>
+        <option value="">Select your course</option>
         <option>MBBS</option>
         <option>BDS</option>
         <option>BAMS</option>
-        <option>Engineering (B.Tech)</option>
-        <option>Law (LLB / BA LLB)</option>
-        <option>Management (BBA / MBA)</option>
+        <option>B.Tech / Engineering</option>
+        <option>LLB / BA LLB</option>
+        <option>BBA / MBA</option>
         <option>BCA</option>
         <option>MCA</option>
         <option>M.Tech</option>
+        <option>Other Course</option>
       </select>
 
-      <label>College Preference *</label>
+      <label for="collegeType">College Preference *</label>
       <select id="collegeType" required>
-        <option value="">-- Select
+        <option value="">Select college type</option>
+        <option>Government College</option>
+        <option>Private College</option>
+        <option>Government and Private Both</option>
+      </select>
+
+      <label for="state">Preferred State</label>
+      <select id="state">
+        <option value="">Select preferred state</option>
+        <option>Uttar Pradesh</option>
+        <option>Bihar</option>
+        <option>Haryana</option>
+        <option>Rajasthan</option>
+        <option>Delhi</option>
+        <option>Madhya Pradesh</option>
+        <option>Other State</option>
+      </select>
+
+      <label for="score">NEET Score / Rank (if applicable)</label>
+      <input
+        type="text"
+        id="score"
+        placeholder="Enter NEET score or rank">
+
+      <label for="budget">Annual Budget (Optional)</label>
+      <select id="budget">
+        <option value="">Select annual budget</option>
+        <option>Below ₹2 Lakh</option>
+        <option>₹2–5 Lakh</option>
+        <option>₹5–10 Lakh</option>
+        <option>₹10–20 Lakh</option>
+        <option>Above ₹20 Lakh</option>
+        <option>Need Guidance</option>
+      </select>
+
+      <label for="message">Additional Information</label>
+      <textarea
+        id="message"
+        rows="3"
+        placeholder="Tell us about your admission requirements"></textarea>
+
+      <button type="submit" class="submit-btn">
+        Submit Enquiry on WhatsApp
+      </button>
+
+    </form>
+
+    <a href="tel:9354748118" class="call-btn">
+      📞 Call Admission Team
+    </a>
+
+    <p class="small-note">
+      After submitting, WhatsApp will open with your enquiry.
+      Please press Send in WhatsApp to send the message.
+    </p>
+
+  </div>
+</section>
+
+<footer>
+  <p><strong>College Info</strong> — College & Admission Guidance</p>
+  <p>Contact: <a href="tel:9354748118">9354748118</a></p>
+  <p>
+    <a href="https://wa.me/919354748118"
+       target="_blank" rel="noopener">WhatsApp Enquiry</a>
+  </p>
+  <p>College admission is subject to eligibility and official counselling rules.</p>
+</footer>
+
+<script>
+document.getElementById("enquiryForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("studentName").value.trim();
+  const mobile = document.getElementById("mobile").value.trim();
+  const course = document.getElementById("course").value;
+  const college = document.getElementById("collegeType").value;
+  const state = document.getElementById("state").value || "Not specified";
+  const score = document.getElementById("score").value.trim() || "Not specified";
+  const budget = document.getElementById("budget").value || "Not specified";
+  const message = document.getElementById("message").value.trim() || "None";
+
+  if (!/^[0-9]{10}$/.test(mobile)) {
+    alert("Please enter a valid 10-digit mobile number.");
+    return;
+  }
+
+  const enquiry =
+    "NEW ADMISSION ENQUIRY - COLLEGE INFO\n\n" +
+    "Student Name: " + name + "\n" +
+    "Mobile Number: " + mobile + "\n" +
+    "Course: " + course + "\n" +
+    "College Preference: " + college + "\n" +
+    "Preferred State: " + state + "\n" +
+    "NEET Score / Rank: " + score + "\n" +
+    "Annual Budget: " + budget + "\n" +
+    "Additional Information: " + message;
+
+  const whatsappURL =
+    "https://wa.me/919354748118?text=" +
+    encodeURIComponent(enquiry);
+
+  window.location.href = whatsappURL;
+});
+</script>
+
+</body>
+</html>
 </body></html>
