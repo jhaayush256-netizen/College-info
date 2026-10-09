@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="College Info — compare government and private colleges, courses, fees and admission cutoffs across India.">
+<title>College Info | Find Your College</title>
+<style>
+:root{--navy:#10233f;--blue:#2563eb;--teal:#0f9f91;--bg:#f4f7fb;--ink:#1d2b3f;--muted:#64748b;--line:#e2e8f0}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(120deg,#10233f,#174c82);color:#fff;padding:18px max(20px,calc((100% - 1180px)/2));}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.brand{font-size:1.45rem;font-weight:850;letter-spacing:-.5px}.brand span{color:#69e0d2}.nav a{color:white;text-decoration:none;font-weight:650;margin-left:18px;font-size:.94rem}
+.hero{max-width:1180px;margin:auto;padding:54px 20px 48px;color:#fff}.hero h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.07;max-width:760px;margin:0 0 16px;letter-spacing:-1.5px}.hero p{max-width:700px;color:#dce9f7;font-size:1.05rem;line-height:1.7;margin:0 0 25px}
+.searchbar{display:flex;gap:10px;max-width:780px;flex-wrap:wrap}.searchbar input{flex:1;min-width:210px;padding:15px 16px;border:0;border-radius:12px;font-size:1rem}.btn{background:#12a594;color:#fff;border:0;padding:14px 20px;border-radius:12px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+main{max-width:1180px;margin:0 auto;padding:28px 20px 70px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:-2px;margin-bottom:30px}.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}.stat strong{display:block;font-size:1.25rem;color:var(--navy)}.stat span{font-size:.87rem;color:var(--muted)}
+.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin:28px 0 16px}.sectionhead h2{margin:0;font-size:1.6rem;color:var(--navy)}.sectionhead p{margin:5px 0 0;color:var(--muted)}
+.courses{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.course{background:white;border:1px solid var(--line);border-radius:14px;padding:16px 10px;text-align:center;cursor:pointer;font-weight:800;color:var(--navy);transition:.15s}.course:hover,.course.active{border-color:var(--blue);background:#eff6ff;transform:translateY(-1px)}.course small{display:block;color:var(--muted);font-weight:500;margin-top:6px}
+.filters{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:10px;background:white;padding:14px;border:1px solid var(--line);border-radius:16px;margin:20px 0}.filters input,.filters select{width:100%;padding:12px;border:1px solid #d7e0ec;border-radius:10px;background:white;color:var(--ink);font:inherit}
+.results-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:18px 0;color:var(--muted);font-size:.94rem}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:17px;overflow:hidden;box-shadow:0 5px 20px #10233f08;display:flex;flex-direction:column}.cardhead{padding:18px 18px 13px;background:linear-gradient(135deg,#eef5ff,#f7fbff);border-bottom:1px solid var(--line)}.badge{display:inline-block;font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;font-weight:850;border-radius:50px;padding:5px 9px;background:#dbeafe;color:#1d4ed8}.badge.private{background:#dcfce7;color:#166534}.card h3{margin:12px 0 5px;font-size:1.08rem;color:var(--navy)}.place{font-size:.86rem;color:var(--muted)}.cardbody{padding:16px 18px;flex:1}.coursepill{font-size:.78rem;color:#475569;background:#f1f5f9;padding:5px 8px;border-radius:8px;display:inline-block;margin-bottom:12px}.details{display:grid;grid-template-columns:1fr 1fr;gap:12px}.detail{border-bottom:1px solid #edf1f6;padding:7px 0}.detail span{display:block;color:var(--muted);font-size:.77rem;margin-bottom:4px}.detail strong{font-size:.93rem;color:var(--ink)}.cutoff{font-size:.8rem;color:#64748b;line-height:1.5;margin-top:12px}.cardfoot{padding:0 18px 18px}.enquire{width:100%;background:var(--navy);padding:11px;border-radius:10px;color:white;text-decoration:none;font-weight:750;text-align:center;display:block}.notice{padding:16px;background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;color:#9a3412;line-height:1.55;font-size:.9rem;margin:20px 0}.empty{padding:35px;text-align:center;background:#fff;border:1px dashed #cbd5e1;border-radius:14px;color:var(--muted);grid-column:1/-1}
+footer{background:#0d1d34;color:#dbe7f5;padding:32px 20px;text-align:center}footer p{margin:7px auto;max-width:760px;line-height:1.6;font-size:.9rem;color:#b6c7dc}.whatsapp{position:fixed;bottom:18px;right:18px;background:#16a34a;color:white;text-decoration:none;padding:14px 18px;border-radius:50px;font-weight:850;box-shadow:0 8px 24px #0002;z-index:9}
+@media(max-width:850px){.courses{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:repeat(2,1fr)}.filters{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.stats{grid-template-columns:1fr}.courses{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.filters{grid-template-columns:1fr}.hero{padding-top:38px}.nav a{margin-left:0;margin-right:12px}}
+</style></head>
+<body>
+<header>
+  <div class="nav"><div class="brand">🎓 College <span>Info</span></div><nav><a href="#courses">Courses</a><a href="#colleges">Find Colleges</a><a href="#contact">Contact</a></nav></div>
+  <section class="hero">
+    <h1>Find the right college for your future.</h1>
+    <p>Explore government and private colleges across India. Compare courses, tuition fees, hostel costs and admission cutoff information in one place.</p>
+    <div class="searchbar"><input id="heroSearch" placeholder="Search college, course, city or state…"><button class="btn" onclick="applyHeroSearch()">Search Colleges</button></div>
+  </section>
+</header>
+<main>
+  <div class="stats"><div class="stat"><strong>Government + Private</strong><span>Explore both college types</span></div><div class="stat"><strong>10 Course Categories</strong><span>From engineering to medical</span></div><div class="stat"><strong>Admission Guidance</strong><span>Ask about fees and counselling</span></div></div>
+  <section id="courses">
+    <div class="sectionhead"><div><h2>Browse by course</h2><p>Select a course to filter college listings.</p></div></div>
+    <div class="courses" id="courseButtons"></div>
+  </section>
+  <section id="colleges">
+    <div class="sectionhead"><div><h2>College directory</h2><p>Search and compare colleges by type, course and location.</p></div></div>
+    <div class="filters">
+      <input id="searchInput" placeholder="College name, city or state">
+      <select id="typeFilter"><option value="">Government & Private</option><option>Government</option><option>Private</option></select>
+      <select id="courseFilter"><option value="">All courses</option></select>
+      <select id="stateFilter"><option value="">All states</option></select>
+    </div>
+    <div class="results-top"><span id="resultCount">Loading colleges…</span><span>Indicative information only</span></div>
+    <div class="grid" id="collegeGrid"></div>
+  </section>
+  <div class="notice"><strong>Important:</strong> Fees and cutoffs can change by academic year, quota, category, domicile and counselling round. Listings marked “Verify current data” are starter entries, not official 2026 cutoff predictions. Always confirm the latest fee notice and cutoff from the college or counselling authority before making admission decisions.</div>
+  <section id="contact">
+    <div class="sectionhead"><div><h2>Need admission guidance?</h2><p>Send your course, NEET/JEE/CLAT score or rank, category and preferred state.</p></div></div>
+    <a class="btn" href="https://wa.me/919354748118?text=Hello%20College%20Info%2C%20I%20need%20college%20admission%20guidance." target="_blank" rel="noopener">Chat on WhatsApp</a>
+  </section>
+</main>
+<footer><div class="brand">🎓 College <span style="color:#69e0d2">Info</span></div><p>College discovery and admission information for students across India.</p><p>Fees and cutoffs are subject to official updates. This website is an independent information directory and is not an official counselling authority.</p><p>© <span id="year"></span> College Info</p></footer>
+<a class="whatsapp" href="https://wa.me/919354748118?text=Hello%20College%20Info%2C%20I%20have%20an%20admission%20query." target="_blank" rel="noopener">☏ WhatsApp Enquiry</a>
+<script>
+const courses = [
+ ["Engineering","B.Tech / BE"],["Law","LLB / BA LLB"],["Management","BBA / MBA"],["BCA","Bachelor of Computer Applications"],["MCA","Master of Computer Applications"],["M.Tech","Master of Technology"],["MBBS","Medical"],["BDS","Dental"],["BAMS","Ayurveda"]
+];
+// Starter records intentionally avoid invented exact cutoff values. Add verified figures in data.js or this list.
+const colleges = [
+ {name:"IIT Delhi",type:"Government",course:"Engineering",city:"New Delhi",state:"Delhi",fees:"Check official fee notice",hostel:"Check official fee notice",cutoff:"JEE Advanced cutoff varies by branch/category",note:"Verify current data"},
+ {name:"NIT Trichy",type:"Government",course:"Engineering",city:"Tiruchirappalli",state:"Tamil Nadu",fees:"Check official fee notice",hostel:"Check official fee notice",cutoff:"JEE Main cutoff varies by branch/category",note:"Verify current data"},
+ {name:"VIT Vellore",type:"Private",course:"Engineering",city:"Vellore",state:"Tamil Nadu",fees:"Check current fee structure",hostel:"Check current fee structure",cutoff:"VITEEE admission criteria; verify current data",note:"Verify current data"},
+ {name:"National Law School of India University",type:"Government",course:"Law",city:"Bengaluru",state:"Karnataka",fees:"Check official fee notice",hostel:"Check official fee notice",cutoff:"CLAT cutoff varies by year/category",note:"Verify current data"},
+ {name:"Faculty of Law, University of Delhi",type:"Government",course:"Law",city:"New Delhi",state:"Delhi",fees:"Check official fee notice",hostel:"Check official fee notice",cutoff:"Admission route and cutoff depend on programme/year",note:"Verify current data"},
+ {name:"Symbiosis Law School, Pune",type:"Private",course:"Law",city:"Pune",state:"Maharashtra",fees:"Check current fee structure",hostel:"Check current fee structure",cutoff:"Entrance criteria vary by programme",note:"Verify current data"},
+ {name:"Faculty of Management Studies, University of Delhi",type:"Government",course:"Management",city:"New Delhi",state:"Delhi",fees:"Check official fee notice",hostel:"Check official fee notice",cutoff:"CAT cutoff/selection criteria vary each year",note:"Verify current data"},
+ {name:"IIM Ahmedabad",type:"Government",course:"Management",city:"Ahmedabad",state:"Gujarat",fees:"Check official fee notice",hostel:"Included/charged as per official policy",cutoff:"CAT cutoff and selection criteria vary",note:"Verify current data"},
+ {name:"Christ University",type:"Private",course:"BCA",city:"Bengaluru",state:"Karnataka",fees:"Check current fee structure",hostel:"Check current fee structure",cutoff:"Programme-specific admission criteria",note:"Verify current data"},
+ {name:"University of Hyderabad",type:"Government",course:"MCA",city:"Hyderabad",state:"Telangana",fees:"Check official fee notice",hostel:"Check official fee notice",cutoff:"Entrance/merit criteria depend on current prospectus",note:"Verify current data"},
+ {name:"IIT Bombay",type:"Government",course:"M.Tech",city:"Mumbai",state:"Maharashtra",fees:"Check official fee notice",hostel:"Check official fee notice",cutoff:"GATE/department criteria vary by programme",note:"Verify current data"},
+ {name:"AIIMS New Delhi",type:"Government",course:"MBBS",city:"New Delhi",state:"Delhi",fees:"Check official fee notice",hostel:"Check official fee notice",cutoff:"NEET-UG closing rank varies by category/round",note:"Verify current data"},
+ {name:"Maulana Azad Medical College",type:"Government",course:"MBBS",city:"New Delhi",state:"Delhi",fees:"Check official fee notice",hostel:"Check official fee notice",cutoff:"NEET-UG closing rank varies by quota/category",note:"Verify current data"},
+ {name:"Kasturba Medical College, Manipal",type:"Private",course:"MBBS",city:"Manipal",state:"Karnataka",fees:"Check current fee structure",hostel:"Check current fee structure",cutoff:"NEET-UG cutoff varies by quota/round",note:"Verify current data"},
+ {name:"Maulana Azad Institute of Dental Sciences",type:"Government",course:"BDS",city:"New Delhi",state:"Delhi",fees:"Check official fee notice",hostel:"Check official fee notice",cutoff:"NEET-UG closing rank varies by category/round",note:"Verify current data"},
+ {name:"Manipal College of Dental Sciences",type:"Private",course:"BDS",city:"Manipal",state:"Karnataka",fees:"Check current fee structure",hostel:"Check current fee structure",cutoff:"NEET-UG cutoff varies by quota/round",note:"Verify current data"},
+ {name:"National Institute of Ayurveda",type:"Government",course:"BAMS",city:"Jaipur",state:"Rajasthan",fees:"Check official fee notice",hostel:"Check official fee notice",cutoff:"NEET-UG cutoff varies by category/round",note:"Verify current data"},
+ {name:"JSS Ayurveda Medical College",type:"Private",course:"BAMS",city:"Mysuru",state:"Karnataka",fees:"Check current fee structure",hostel:"Check current fee structure",cutoff:"NEET-UG cutoff varies by quota/round",note:"Verify current data"}
+];
+let activeCourse = "";
+const courseButtons = document.getElementById('courseButtons');
+courses.forEach(([name,desc])=>{const b=document.createElement('button');b.className='course';b.innerHTML=`${name}<small>${desc}</small>`;b.onclick=()=>{activeCourse=activeCourse===name?"":name;document.getElementById('courseFilter').value=activeCourse;render();document.querySelectorAll('.course').forEach(x=>x.classList.toggle('active',x===b&&!!activeCourse));};courseButtons.appendChild(b);});
+const cf=document.getElementById('courseFilter');courses.forEach(([n])=>{const o=document.createElement('option');o.value=n;o.textContent=n;cf.appendChild(o)});
+const states=[...new Set(colleges.map(c=>c.state))].sort();const sf=document.getElementById('stateFilter');states.forEach(s=>{const o=document.createElement('option');o.value=s;o.textContent=s;sf.appendChild(o)});
+function waLink(c){return 'https://wa.me/919354748118?text='+encodeURIComponent(`Hello College Info, please share updated fees and cutoff for ${c.name} (${c.course}).`)}
+function render(){
+ const q=document.getElementById('searchInput').value.toLowerCase().trim(), type=document.getElementById('typeFilter').value, course=document.getElementById('courseFilter').value, state=document.getElementById('stateFilter').value;
+ const list=colleges.filter(c=>(!q||[c.name,c.city,c.state,c.course].join(' ').toLowerCase().includes(q))&&(!type||c.type===type)&&(!course||c.course===course)&&(!state||c.state===state));
+ document.getElementById('resultCount').textContent=`${list.length} college${list.length===1?'':'s'} shown`;
+ const grid=document.getElementById('collegeGrid');grid.innerHTML='';
+ if(!list.length){grid.innerHTML='<div class="empty">No colleges match these filters. Try another course or state.</div>';return;}
+ list.forEach(c=>{const el=document.createElement('article');el.className='card';el.innerHTML=`<div class="cardhead"><span class="badge ${c.type==='Private'?'private':''}">${c.type}</span><h3>${c.name}</h3><div class="place">📍 ${c.city}, ${c.state}</div></div><div class="cardbody"><span class="coursepill">${c.course}</span><div class="details"><div class="detail"><span>Tuition / fees</span><strong>${c.fees}</strong></div><div class="detail"><span>Hostel / other costs</span><strong>${c.hostel}</strong></div></div><div class="cutoff"><b>Cutoff:</b> ${c.cutoff}<br><b>Status:</b> ${c.note}</div></div><div class="cardfoot"><a class="enquire" href="${waLink(c)}" target="_blank" rel="noopener">Ask for Updated Fees & Cutoff ↗</a></div>`;grid.appendChild(el);});
+}
+function applyHeroSearch(){document.getElementById('searchInput').value=document.getElementById('heroSearch').value;render();document.getElementById('colleges').scrollIntoView({behavior:'smooth'});}
+['searchInput','typeFilter','courseFilter','stateFilter'].forEach(id=>document.getElementById(id).addEventListener(id==='searchInput'?'input':'change',()=>{activeCourse=document.getElementById('courseFilter').value;render();document.querySelectorAll('.course').forEach((b,i)=>b.classList.toggle('active',courses[i][0]===activeCourse));}));
+document.getElementById('year').textContent=new Date().getFullYear();render();
+</script>
+</body></html>
