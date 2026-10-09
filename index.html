@@ -431,5 +431,34 @@ footer a {
         <option>Government and Private Both</option>
       </select>
 
-      
-</body></html>
+<button type="submit" class="btn btn-green">
+  Submit Enquiry on WhatsApp
+</button>
+
+</form>
+
+<script>
+document.getElementById("enquiryForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("studentName").value;
+  const mobile = document.getElementById("mobile").value;
+  const course = document.getElementById("course").value;
+  const college = document.getElementById("collegeType").value;
+
+  const message = `NEW ADMISSION ENQUIRY
+
+Student Name: ${name}
+Mobile Number: ${mobile}
+Course: ${course}
+College Preference: ${college}`;
+
+  const whatsappURL =
+    "https://wa.me/919354748118?text=" + encodeURIComponent(message);
+
+  window.open(whatsappURL, "_blank");
+});
+</script>
+
+</body>
+  </html>
