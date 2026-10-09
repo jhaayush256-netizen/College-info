@@ -96,4 +96,11 @@ function applyHeroSearch(){document.getElementById('searchInput').value=document
 ['searchInput','typeFilter','courseFilter','stateFilter'].forEach(id=>document.getElementById(id).addEventListener(id==='searchInput'?'input':'change',()=>{activeCourse=document.getElementById('courseFilter').value;render();document.querySelectorAll('.course').forEach((b,i)=>b.classList.toggle('active',courses[i][0]===activeCourse));}));
 document.getElementById('year').textContent=new Date().getFullYear();render();
 </script>
+  <a href="tel:9354748118"
+style="position:fixed;bottom:20px;left:15px;
+background:#2563eb;color:white;padding:15px 22px;
+border-radius:50px;text-decoration:none;
+font-weight:bold;z-index:99999;">
+📞 Call Now
+  </a>
 </body></html>
