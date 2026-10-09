@@ -103,4 +103,90 @@ border-radius:50px;text-decoration:none;
 font-weight:bold;z-index:99999;">
 📞 Call Now
   </a>
+  <section style="max-width:500px;margin:30px auto;padding:24px;
+background:#fff;border-radius:16px;box-shadow:0 4px 20px #ddd;
+font-family:Arial,sans-serif;">
+
+<h2 style="color:#12345a;text-align:center;">🎓 Admission Enquiry</h2>
+<p style="text-align:center;color:#666;">Fill the form to get admission guidance.</p>
+
+<form id="enquiryForm">
+<input id="studentName" placeholder="Student Name" required
+style="width:100%;padding:13px;margin:8px 0;box-sizing:border-box;">
+
+<input id="mobile" type="tel" placeholder="Mobile Number"
+pattern="[0-9]{10}" maxlength="10" required
+style="width:100%;padding:13px;margin:8px 0;box-sizing:border-box;">
+
+<select id="course" required
+style="width:100%;padding:13px;margin:8px 0;box-sizing:border-box;">
+<option value="">Select Course</option>
+<option>MBBS</option>
+<option>BDS</option>
+<option>BAMS</option>
+<option>Engineering</option>
+<option>Law</option>
+<option>Management</option>
+<option>BCA</option>
+<option>MCA</option>
+<option>M.Tech</option>
+</select>
+
+<select id="collegeType" required
+style="width:100%;padding:13px;margin:8px 0;box-sizing:border-box;">
+<option value="">College Type</option>
+<option>Government</option>
+<option>Private</option>
+<option>Both</option>
+</select>
+
+<input id="state" placeholder="Preferred State"
+style="width:100%;padding:13px;margin:8px 0;box-sizing:border-box;">
+
+<input id="score" placeholder="NEET Score / Entrance Rank (if applicable)"
+style="width:100%;padding:13px;margin:8px 0;box-sizing:border-box;">
+
+<button type="submit"
+style="width:100%;padding:15px;background:#159447;color:white;
+border:0;border-radius:8px;font-size:17px;font-weight:bold;margin-top:12px;">
+📲 Submit Enquiry on WhatsApp
+</button>
+</form>
+</section>
+
+<script>
+<section class="enquiry-section">
+  <div class="enquiry-box">
+
+    <h2>🎓 Admission Enquiry Form</h2>
+    <p>Fill in your details. Our admission team will contact you.</p>
+
+    <form id="enquiryForm">
+
+      <label>Student Name *</label>
+      <input type="text" id="studentName"
+        placeholder="Enter your full name" required>
+
+      <label>Mobile Number *</label>
+      <input type="tel" id="mobile"
+        placeholder="Enter 10-digit mobile number"
+        pattern="[0-9]{10}" maxlength="10" required>
+
+      <label>Select Course *</label>
+      <select id="course" required>
+        <option value="">-- Select Course --</option>
+        <option>MBBS</option>
+        <option>BDS</option>
+        <option>BAMS</option>
+        <option>Engineering (B.Tech)</option>
+        <option>Law (LLB / BA LLB)</option>
+        <option>Management (BBA / MBA)</option>
+        <option>BCA</option>
+        <option>MCA</option>
+        <option>M.Tech</option>
+      </select>
+
+      <label>College Preference *</label>
+      <select id="collegeType" required>
+        <option value="">-- Select
 </body></html>
